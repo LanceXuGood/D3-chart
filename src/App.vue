@@ -1,12 +1,24 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link v-for="(item, index) in routes" :to="`/${item.name}`" :key="index">{{item.name}}</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+import { routes } from '@/router.js'
+
+export default {
+  name: 'home',
+  data () {
+    return {
+      routes
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
