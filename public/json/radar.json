@@ -1,0 +1,94 @@
+{
+  "code": 200,
+  "message": "success",
+  "results": [
+    {
+      "name": "Information",
+      "count": 5931
+    },
+    {
+      "name": "Integration",
+      "count": 5710
+    },
+    {
+      "name": "Shape",
+      "count": 4896
+    },
+    {
+      "name": "Fragmentation",
+      "count": 2960
+    },
+    {
+      "name": "State",
+      "count": 2820
+    },
+    {
+      "name": "Pulsation",
+      "count": 2379
+    },
+    {
+      "name": "Flexibility",
+      "count": 1839
+    },
+    {
+      "name": "Surface",
+      "count": 1749
+    },
+    {
+      "name": "Porosity",
+      "count": 1621
+    },
+    {
+      "name": "Senses",
+      "count": 1257
+    },
+    {
+      "name": "Automation",
+      "count": 1123
+    },
+    {
+      "name": "Coordination",
+      "count": 988
+    },
+    {
+      "name": "Color",
+      "count": 974
+    },
+    {
+      "name": "Fibres",
+      "count": 847
+    },
+    {
+      "name": "Sound",
+      "count": 770
+    },
+    {
+      "name": "Market",
+      "count": 744
+    },
+    {
+      "name": "Liquidtospray",
+      "count": 434
+    },
+    {
+      "name": "Transparency",
+      "count": 372
+    },
+    {
+      "name": "Asymmetry",
+      "count": 359
+    },
+    {
+      "name": "Liquidtofoam",
+      "count": 289
+    },
+    {
+      "name": "Smell",
+      "count": 64
+    },
+    {
+      "name": "Taste",
+      "count": 23
+    }
+  ]
+}
