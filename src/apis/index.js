@@ -49,3 +49,12 @@ export const evolutionary = async ({ queryId, facetLimit = 50 }) => {
     return { iq, axis: val, value }
   })]
 }
+
+export const elements = async ({ queryId, facetLimit = 20 }) => {
+  const response = await http.post('periodic', { queryId, facetLimit })
+  const data = _.get(response, 'data.results', [])
+  return data.map((record) => {
+    const iq = `ELEMENT:"${record.name}"`
+    return { iq, ...record }
+  })
+}

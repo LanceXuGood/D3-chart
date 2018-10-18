@@ -7,7 +7,7 @@
 
 import _ from 'lodash'
 import * as d3 from 'd3'
-import d3Tip from 'd3-tip'
+import d3Tip from '@/assets/d3-tip'
 const tip = d3Tip().offset(function () {
   return [-(this.getBBox().height), 0] // 位置[y,x]
 }).attr('class', 'd3-tip').html(d => d.value)

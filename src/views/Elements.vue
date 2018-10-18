@@ -2,13 +2,13 @@
   <div class="matrix-page">
     <div>测试页Elements</div>
     <div></div>
-    <Radar :options="options"/>
+    <Elements :options="options"/>
   </div>
 </template>
 
 <script>
-  import { search, getQuery, evolutionary } from '@/apis'
-  import Radar from '@/components/radar'
+  import { search, getQuery, elements } from '@/apis'
+  import Elements from '@/components/elements'
   import utilsPfq from '@/utils/pfq'
   // import axios from 'axios'
 
@@ -48,11 +48,11 @@
       this.refiner = utilsPfq.decode(pfq)
       this.pq = pq
       this.keyword = keyword
-      const source = await evolutionary({ queryId })
-      this.options.data = this.$set(this.options, 'source', source)
+      const elementData = await elements({ version: 1, queryId })
+      this.options.source = this.$set(this.options, 'source', elementData)
     },
     components: {
-      Radar
+      Elements
     },
     data () {
       return {
@@ -65,10 +65,10 @@
         queryId: '',
         options: {
           // 数据类
-          width: 965,
+          width: 1200,
           height: 799,
           source: [],
-          container: '#radar'
+          container: '#elements'
         }
       }
     }

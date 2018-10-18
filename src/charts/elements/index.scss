@@ -1,0 +1,29 @@
+.zhy-atomicnumber, .zhy-patentcount{
+  font-family: Rubik;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  fill: #5e6c84;
+}
+.zhy-symbol{
+  font-family: Rubik;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.71;
+  letter-spacing: 0.1px;
+  fill: #061632;
+}
+.zhy-atomicnumber,
+.zhy-patentcount,
+.zhy-symbol,
+.zhy-element-cell{
+  &.disabled{
+    opacity: 0.3;
+  }
+}
+
+
+.zhy-element-cell{
+  fill: #fefefe;
+  stroke-width: 1;
+  stroke: #b3bac5;
+}

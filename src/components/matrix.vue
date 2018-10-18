@@ -24,6 +24,13 @@ export default {
     cl (event) {
       console.log(event)
     }
+  },
+  mounted () {
+    if (this.options.source.length) {
+      Draw.drawMatrix(this.options, (selectedData, event) => {
+        console.log(selectedData, event)
+      })
+    }
   }
 }
 </script>

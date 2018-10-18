@@ -42,23 +42,25 @@ export default {
   }
 }
 .d3-tip {
-  line-height: 1;
-  font-weight: bold;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
+  line-height: 1.71;
+  font-family: Rubik;
+  font-size: 14px;
+  padding: 4px;
+  background: #344563;
   color: #fff;
-  border-radius: 2px;
+  border-radius: 4px;
   pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* Creates a small triangle extender for the tooltip */
 .d3-tip:after {
   box-sizing: border-box;
-  display: inline;
   font-size: 10px;
   width: 100%;
   line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
+  opacity: 0.8;
+  color: #344563;
   position: absolute;
   pointer-events: none;
 }

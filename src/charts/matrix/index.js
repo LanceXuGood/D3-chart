@@ -1,10 +1,8 @@
 // TODO: 不依赖任何框架
 import './index.scss'
 import * as d3 from 'd3'
-import d3Tip from 'd3-tip'
-const tip = d3Tip().offset(function () {
-  return [this.getBBox().height / 10, 0] // 位置[x,y]
-}).attr('class', 'd3-tip').html(d => {
+import d3Tip from '@/assets/d3-tip'
+const tip = d3Tip().direction('w').attr('class', 'd3-tip').html(d => {
   if (typeof d === 'object') {
     return d.x
   }

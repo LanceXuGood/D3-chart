@@ -12,6 +12,11 @@ export const routes = [
     path: '/Radar',
     name: 'Radar',
     component: () => import(/* webpackChunkName: "radar" */ './views/Radar.vue')
+  },
+  {
+    path: '/Elements',
+    name: 'Elements',
+    component: () => import(/* webpackChunkName: "elements" */ './views/Elements.vue')
   }
   // {
   //   path: '/about',

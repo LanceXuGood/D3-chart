@@ -22,11 +22,10 @@ export default {
     // this.options.source = this.$set(this.options, 'source', this.formatResponseData(responseData.data.results))
     // //<<</>>>
 
-    //  TODO: api理解
     const searchResponseData = await search({
       keyword: this.keyword
     })
-    // TODO: api理解
+
     const { queryId } = searchResponseData.data.results
     const { pfq, pq, keyword } = await getQuery(queryId)
     this.pfq = pfq
