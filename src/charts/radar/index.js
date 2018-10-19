@@ -69,10 +69,10 @@ const index = (id, data, options, callback) => {
   const height = cfg.height + cfg.margin.top + cfg.margin.bottom
   // Initiate the radar chart SVG
   const svg = d3.select(id)
-    .attr('width', width)
-    .attr('height', height)
+    // .attr('width', width)
+    // .attr('height', height)
     .call(tip)
-    // .attr('viewBox', `0 0 ${width} ${height}`)
+    .attr('viewBox', `0 0 ${width} ${height}`)
   // Append a g element
   const g = svg.append('g')
     .attr('transform', 'translate(' + (cfg.width / 2 + cfg.margin.left) + ',' + (cfg.height / 2 + cfg.margin.top) + ')')

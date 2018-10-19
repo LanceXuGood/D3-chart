@@ -2,7 +2,10 @@
   <div class="matrix-page">
     <div>测试页Elements</div>
     <div></div>
-    <Elements :options="options"/>
+    <div class="container">
+      <Elements :options="options"/>
+    </div>
+
   </div>
 </template>
 
@@ -13,7 +16,6 @@
   // import axios from 'axios'
 
   export default {
-    name: 'elements',
     async created () {
       // //<<<test数据>>>
       // const responseData = await axios.get('/json/radar.json')

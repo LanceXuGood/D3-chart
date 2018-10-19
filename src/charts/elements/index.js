@@ -21,8 +21,9 @@ export default (options, callback) => {
   const { container, source: origin } = options
   const data = elements(origin)
   const svg = d3.select(container)
-    .attr('width', width)
-    .attr('height', height)
+    // .attr('width', width)
+    // .attr('height', height)
+    .attr('viewBox', `0 0 ${width} ${height}`)
     .call(tip)
 
   const group = svg.append('g')

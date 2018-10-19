@@ -4,7 +4,10 @@
     <!--<a rel="stylesheet" href="https://app.zeplin.io/project/5ac1a8f35bef39973cbfacbb/screen/5babb11bae76824d430d01bf">zeplin/-->
     <!--Problem - solution matrix</a>-->
     <div>Problem - solution matrix</div>
-    <Matrix :options="options"/>
+    <div class="container">
+      <Matrix :options="options"/>
+    </div>
+
   </div>
 </template>
 
@@ -15,7 +18,6 @@ import utilsPfq from '@/utils/pfq'
 // import axios from 'axios'
 
 export default {
-  name: 'matrix',
   async created () {
     // //<<<test数据>>>
     // const responseData = await axios.get('/json/matrix.json')

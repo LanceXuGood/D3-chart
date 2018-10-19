@@ -6,17 +6,22 @@ export const routes = [
   {
     path: '/Matrix',
     name: 'Matrix',
-    component: () => import(/* webpackChunkName: "matrix" */ './views/Matrix.vue')
+    component: () => import(/* webpackChunkName: "matrix-page" */ './views/Matrix.vue')
   },
   {
     path: '/Radar',
     name: 'Radar',
-    component: () => import(/* webpackChunkName: "radar" */ './views/Radar.vue')
+    component: () => import(/* webpackChunkName: "radar-page" */ './views/Radar.vue')
   },
   {
     path: '/Elements',
     name: 'Elements',
-    component: () => import(/* webpackChunkName: "elements" */ './views/Elements.vue')
+    component: () => import(/* webpackChunkName: "elements-page" */ './views/Elements.vue')
+  },
+  {
+    path: '/Sunburst',
+    name: 'Sunburst',
+    component: () => import(/* webpackChunkName: "sunburst-page" */ './views/Sunburst.vue')
   }
   // {
   //   path: '/about',

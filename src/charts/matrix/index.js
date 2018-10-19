@@ -68,9 +68,9 @@ export default ({ space, square, textLeftDis, textTopDis, highLightColor, source
 
   // 考虑计算图形的长度，所以不预先设定长宽，采用动态计算的方式
   const svg = d3.select(container)
-    .attr('width', rectSvgWidth)
-    .attr('height', rectSvgHeight)
-    // .attr('viewBox', `0 0 ${rectSvgWidth} ${rectSvgHeight}`)
+    // .attr('width', rectSvgWidth)
+    // .attr('height', rectSvgHeight)
+    .attr('viewBox', `0 0 ${rectSvgWidth} ${rectSvgHeight}`)
     .call(tip)
 
   const cellSize = (size - 400) / (rows > cols ? rows : cols)
