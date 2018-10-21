@@ -22,6 +22,11 @@ export const routes = [
     path: '/Sunburst',
     name: 'Sunburst',
     component: () => import(/* webpackChunkName: "sunburst-page" */ './views/Sunburst.vue')
+  },
+  {
+    path: '/Bar',
+    name: 'Bar',
+    component: () => import(/* webpackChunkName: "bar-page" */ './views/Bar.vue')
   }
   // {
   //   path: '/about',

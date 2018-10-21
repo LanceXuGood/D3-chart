@@ -2,6 +2,8 @@ import _ from 'lodash'
 import * as d3 from 'd3'
 import './index.scss'
 
+let step = 0
+
 const color = d3.scaleOrdinal(d3.schemePaired)
 
 const x = d3.scaleLinear()
@@ -56,7 +58,7 @@ export default (options) => {
 
   // 圆弧标签计算
   const arcLabel = d3.arc()
-    .startAngle(d => max(min(x(d.x9))))
+    .startAngle(d => max(min(x(d.x1))))
     .endAngle(d => max(min(x(d.x0))))
     .innerRadius(d => {
       return max(y(d.y0))
@@ -127,9 +129,6 @@ export default (options) => {
     .style('fill', '#fff')
     .style('font-size', '12px')
     .style('font-family', 'Rubik')
-    .style('opacity', (d) => {
-      return d.isHideText
-    })
     .attr('proportion', d => {
       if (d.depth > 0) {
         return d.value / d.parent.value
@@ -160,20 +159,33 @@ export default (options) => {
     })
 
   function click (d) {
-    if (d.depth >= 1) {
+    if (d.depth > step) {
+      // TODO: 优化这里的逻辑，采用区分较好的class类名区分子父
+      // next
+      d3.selectAll(`.sunburst-level-${d.depth}`)._groups[0].forEach(item => {
+        if (d3.select(item).classed('sunburst-visible')) {
+          const proportion = 1 / (d.value / d.parent.value)
+          if (d3.select(item).attr('proportion') * proportion > 0.1) {
+            d3.select(item)
+              .style('opacity', 1)
+          }
+        }
+      })
       d3.selectAll(`.sunburst-level-${d.depth + 1}`)._groups[0].forEach(item => {
         if (d3.select(item).classed('sunburst-visible')) {
-          if (d3.select(item).attr('proportion') > 0.01) {
+          const proportion = 1 / (d.value / d.parent.value)
+          if (d3.select(item).attr('proportion') * proportion > 0.1) {
             d3.select(item)
               .style('opacity', 1)
           }
         }
       })
     } else {
-      // 返回第一层
       d3.selectAll(`.sunburst-visible`)
         .style('opacity', 0)
     }
+    step = d.depth
+
     const transition = group.transition()
       .duration(750)
       .tween('scale', () => {
