@@ -12,48 +12,49 @@
 </template>
 
 <script>
-  import { search, getQuery, evolutionary } from '@/apis'
+  // import { search, getQuery, evolutionary } from '@/apis'
+  // import utilsPfq from '@/utils/pfq'
+  import axios from 'axios'
   import Radar from '@/components/radar'
-  import utilsPfq from '@/utils/pfq'
-  // import axios from 'axios'
 
   export default {
     async created () {
-      // //<<<test数据>>>
-      // const responseData = await axios.get('/json/radar.json')
-      // const formatData = [responseData.data.results.map(({ name: axis, count: value }) => {
-      //   const iq = `EVOLUTION_TYPE:"${axis}"`
-      //   let val = axis
-      //   if (axis === 'Liquidtospray') {
-      //     val = 'Liquid to spray'
-      //   } else if (axis === 'Liquidtofoam') {
-      //     val = 'Liquid to foam'
-      //   }
-      //   return { iq, axis: val, value }
-      // })]
+      // <<<test数据>>>
+      const responseData = await axios.get('/json/radar.json')
+      console.log(responseData)
+      const formatData = [responseData.data.results.map(({ name: axis, count: value }) => {
+        const iq = `EVOLUTION_TYPE:"${axis}"`
+        let val = axis
+        if (axis === 'Liquidtospray') {
+          val = 'Liquid to spray'
+        } else if (axis === 'Liquidtofoam') {
+          val = 'Liquid to foam'
+        }
+        return { iq, axis: val, value }
+      })]
+
+      this.options = {
+        container: '#radar',
+        source: formatData,
+        width: 965,
+        height: 799
+      }
+      // <<</>>>
+
+      // // 通过search接口查询queryId
+      // const searchResponseData = await search({
+      //   keyword: this.keyword
+      // })
       //
-      // this.options = {
-      //   container: '#radar',
-      //   data: formatData,
-      //   width: 965,
-      //   height: 799
-      // }
-      // // <<</>>>
-
-      // 通过search接口查询queryId
-      const searchResponseData = await search({
-        keyword: this.keyword
-      })
-
-      const { queryId } = searchResponseData.data.results
-      const { pfq, pq, keyword } = await getQuery(queryId)
-      this.pfq = pfq
-      this.refiner = null
-      this.refiner = utilsPfq.decode(pfq)
-      this.pq = pq
-      this.keyword = keyword
-      const source = await evolutionary({ queryId })
-      this.options.data = this.$set(this.options, 'source', source)
+      // const { queryId } = searchResponseData.data.results
+      // const { pfq, pq, keyword } = await getQuery(queryId)
+      // this.pfq = pfq
+      // this.refiner = null
+      // this.refiner = utilsPfq.decode(pfq)
+      // this.pq = pq
+      // this.keyword = keyword
+      // const source = await evolutionary({ queryId })
+      // this.options.data = this.$set(this.options, 'source', source)
     },
     components: {
       Radar

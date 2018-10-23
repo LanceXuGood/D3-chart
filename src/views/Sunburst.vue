@@ -13,9 +13,9 @@
 
 <script>
   // import { search, getQuery, evolutionary } from '@/apis'
-  import Sunburst from '@/components/sunburst'
   // import utilsPfq from '@/utils/pfq'
   import axios from 'axios'
+  import Sunburst from '@/components/sunburst'
 
   export default {
     async created () {

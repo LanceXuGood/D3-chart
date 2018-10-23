@@ -8,7 +8,7 @@ const tip = d3Tip().offset(function () {
   return d.name
 })
 const SIZE = 64
-// 2表示预留的空白位置， 5表示每个单元格右侧底部空白
+// 表示预留的空白位置， 5表示每个单元格右侧底部空白
 const width = (SIZE + 5) * 18 - 5 + 2
 const height = (SIZE + 5) * 9 + SIZE / 2 - 5 + 2
 const items = [

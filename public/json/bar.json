@@ -1,17 +1,154 @@
 {
-  "label": [1, 2],
-  "scale": [
-    ["50%",
-      "30%",
-      "20"
-    ],
-    ["50%",
-      "30%",
-      "20"
-    ],
-    ["50%",
-      "30%",
-      "20"
-    ]
+  "code": 200,
+  "message": "success",
+  "results": [
+    {
+      "name": "Electrical engineering",
+      "count": 213526,
+      "children": [
+        {
+          "name": "Computer technology",
+          "count": 130731,
+          "otherName": "Ⅰ__6"
+        },
+        {
+          "name": "Digital communication",
+          "count": 74607,
+          "otherName": "Ⅰ__4"
+        },
+        {
+          "name": "Telecommunications",
+          "count": 73280,
+          "otherName": "Ⅰ__3"
+        },
+        {
+          "name": "Audio-visual technology",
+          "count": 39650,
+          "otherName": "Ⅰ__2"
+        },
+        {
+          "name": "IT methods for management",
+          "count": 32653,
+          "otherName": "Ⅰ__7"
+        },
+        {
+          "name": "Electrical machinery, apparatus, energy",
+          "count": 12908,
+          "otherName": "Ⅰ__1"
+        }
+      ],
+      "otherName": "Ⅰ"
+    },
+    {
+      "name": "Chemistry",
+      "count": 123491,
+      "children": [
+        {
+          "name": "Organic fine chemistry",
+          "count": 62428,
+          "otherName": "Ⅲ__14"
+        },
+        {
+          "name": "Pharmaceuticals",
+          "count": 45120,
+          "otherName": "Ⅲ__16"
+        },
+        {
+          "name": "Food chemistry",
+          "count": 41735,
+          "otherName": "Ⅲ__18"
+        },
+        {
+          "name": "Biotechnology",
+          "count": 36319,
+          "otherName": "Ⅲ__15"
+        },
+        {
+          "name": "Basic materials chemistry ",
+          "count": 32237,
+          "otherName": "Ⅲ__19"
+        },
+        {
+          "name": "Chemical engineering",
+          "count": 5149,
+          "otherName": "Ⅲ__23"
+        }
+      ],
+      "otherName": "Ⅲ"
+    },
+    {
+      "name": "Instruments",
+      "count": 52849,
+      "children": [
+        {
+          "name": "Measurement",
+          "count": 26718,
+          "otherName": "Ⅱ__10"
+        },
+        {
+          "name": "Control",
+          "count": 16164,
+          "otherName": "Ⅱ__12"
+        },
+        {
+          "name": "Medical technology",
+          "count": 15344,
+          "otherName": "Ⅱ__13"
+        },
+        {
+          "name": "Analysis of biological materials",
+          "count": 10564,
+          "otherName": "Ⅱ__11"
+        },
+        {
+          "name": "Optics",
+          "count": 5845,
+          "otherName": "Ⅱ__9"
+        },
+        {
+          "name": "Audio-visual technology",
+          "count": 1135,
+          "otherName": "Ⅱ__2"
+        }
+      ],
+      "otherName": "Ⅱ"
+    },
+    {
+      "name": "Mechanical engineering",
+      "count": 24241,
+      "children": [
+        {
+          "name": "Other special machines",
+          "count": 9392,
+          "otherName": "Ⅳ__29"
+        },
+        {
+          "name": "Handling",
+          "count": 5459,
+          "otherName": "Ⅳ__25"
+        },
+        {
+          "name": "Textile and paper machines",
+          "count": 3421,
+          "otherName": "Ⅳ__28"
+        },
+        {
+          "name": "Transport",
+          "count": 2988,
+          "otherName": "Ⅳ__32"
+        },
+        {
+          "name": "Machine tools",
+          "count": 1858,
+          "otherName": "Ⅳ__26"
+        },
+        {
+          "name": "Mechanical elements",
+          "count": 1681,
+          "otherName": "Ⅳ__31"
+        }
+      ],
+      "otherName": "Ⅳ"
+    }
   ]
 }

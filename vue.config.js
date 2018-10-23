@@ -5,6 +5,7 @@ module.exports = {
     ? `{{CDN_BASE_URL}}/${pkg.name}/${pkg.version}/`
     : '/',
   devServer: {
+    port: 3000,
     proxy: {
       '/innovation-charts': {
         target: 'http://ic.zhihuiya.com'

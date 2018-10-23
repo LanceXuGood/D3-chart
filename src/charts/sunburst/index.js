@@ -180,9 +180,22 @@ export default (options) => {
           }
         }
       })
-    } else {
+    } else if (d.depth < step) {
+      // 还原所有的透明度
       d3.selectAll(`.sunburst-visible`)
         .style('opacity', 0)
+      // pre
+      d3.selectAll(`.sunburst-level-${d.depth + 1}`)._groups[0].forEach(item => {
+        if (d3.select(item).classed('sunburst-visible')) {
+          const proportion = 1 / (d.value / d.parent.value)
+          if (d3.select(item).attr('proportion') * proportion > 0.1) {
+            d3.select(item)
+              .style('opacity', 1)
+          }
+        }
+      })
+      // d3.selectAll(`.sunburst-visible`)
+      //   .style('opacity', 0)
     }
     step = d.depth
 

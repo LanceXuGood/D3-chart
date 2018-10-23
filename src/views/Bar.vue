@@ -11,9 +11,9 @@
 
 <script>
   // import { search, getQuery, elements } from '@/apis'
-  import Bar from '@/components/bar'
   // import utilsPfq from '@/utils/pfq'
   import axios from 'axios'
+  import Bar from '@/components/bar'
 
   export default {
     async created () {
@@ -21,7 +21,7 @@
       const responseData = await axios.get('/json/bar.json')
       this.options = {
         container: '#bar',
-        source: responseData.data,
+        source: responseData.data.results,
         width: 965,
         height: 799
       }

@@ -12,38 +12,59 @@
 </template>
 
 <script>
-import { search, getQuery, $problemRefSolution } from '@/apis'
+// import { search, getQuery, $problemRefSolution } from '@/apis'
+// import utilsPfq from '@/utils/pfq'
+import axios from 'axios'
 import Matrix from '@/components/matrix'
-import utilsPfq from '@/utils/pfq'
-// import axios from 'axios'
 
 export default {
   async created () {
-    // //<<<test数据>>>
-    // const responseData = await axios.get('/json/matrix.json')
-    // this.options.source = this.$set(this.options, 'source', this.formatResponseData(responseData.data.results))
-    // //<<</>>>
+    // <<<test数据>>>
+    const responseData = await axios.get('/json/matrix.json')
+    this.options.source = this.$set(this.options, 'source', this.formatResponseData(responseData.data.results))
+    // <<</>>>
 
-    const searchResponseData = await search({
-      keyword: this.keyword
-    })
-
-    const { queryId } = searchResponseData.data.results
-    const { pfq, pq, keyword } = await getQuery(queryId)
-    this.pfq = pfq
-    this.refiner = null
-    this.refiner = utilsPfq.decode(pfq)
-    this.pq = pq
-    this.keyword = keyword
-    const matrixData = await $problemRefSolution({ version: 1, queryId })
-    // 加上高亮参数
-    matrixData.data.forEach((rowItem, rowIndex) => {
-      rowItem = Object.assign(rowItem, { isActive: this.isActiveIndex === rowIndex })
-    })
-    this.options.source = this.$set(this.options, 'source', matrixData)
+    // const searchResponseData = await search({
+    //   keyword: this.keyword
+    // })
+    //
+    // const { queryId } = searchResponseData.data.results
+    // const { pfq, pq, keyword } = await getQuery(queryId)
+    // this.pfq = pfq
+    // this.refiner = null
+    // this.refiner = utilsPfq.decode(pfq)
+    // this.pq = pq
+    // this.keyword = keyword
+    // const matrixData = await $problemRefSolution({ version: 1, queryId })
+    // // 加上高亮参数
+    // matrixData.data.forEach((rowItem, rowIndex) => {
+    //   rowItem = Object.assign(rowItem, { isActive: this.isActiveIndex === rowIndex })
+    // })
+    // this.options.source = this.$set(this.options, 'source', matrixData)
   },
   components: {
     Matrix
+  },
+  methods: {
+    formatResponseData (matrixData) {
+      // 重新组装数据，将x，y 并入一起
+      const { data, x, y } = matrixData
+      const newData = []
+      // 格式化数据，将取得的数据转换成表格可用数据
+      data.forEach((rowItem, rowIndex) => {
+        newData[rowIndex] = Object.assign([], { isActive: this.isActiveIndex === rowIndex })
+        rowItem.forEach((colItem, colIndex) => {
+          newData[rowIndex].push({
+            value: colItem,
+            iq: `PROBLEM: "${y[colIndex]}" AND SOLUTION:"${x[colIndex]}"`
+          })
+        })
+      })
+      return {
+        ...matrixData,
+        data: newData
+      }
+    }
   },
   data () {
     return {
