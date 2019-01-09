@@ -1,5 +1,5 @@
 # D3-chart
-
+  暂时只是个DEMO， 后期想做成包并且发布。
 ## Matrix
 
   ![Image text](./src/assets/matrix.jpg)
