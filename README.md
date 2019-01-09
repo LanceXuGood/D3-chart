@@ -1,31 +1,21 @@
-# innovation-charts
+# D3-chart
 
-## Project setup
-```
-yarn install
-```
+##Matrix
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+  ![Image text](./src/assets/matrix.jpg)
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+##Radar
 
-### Run your tests
-```
-yarn run test
-```
+  ![Image text](./src/assets/radar.jpg)
 
-### Lints and fixes files
-```
-yarn run lint
-```
+##Element
 
-### Run your unit tests
-```
-yarn run test:unit
-```
+  ![Image text](./src/assets/element.jpg)
+
+##Element
+
+  ![Image text](./src/assets/sunburst.jpg)
+
+##Element
+
+  ![Image text](./src/assets/bar.jpg)
